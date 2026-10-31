@@ -14,23 +14,32 @@ if not os.path.exists("expenses.csv"):
 while True:
     line = input(">>> ")
     part = line.split()
-
-    if "quit" in part[0]:
-        print("quitting...")
-        break
     
+    #for cmd in part:
+    cmdg = part[0].strip().lower()
+    if cmdg == "reset":
+        print("")
+        exp.createfile()
+        print("Reset file")
+        print("")
+    elif cmdg == "quit":
+        print("")
+        print("Quitting...")
+        break
+    elif cmdg == "read":
+        print("")
+        print(output.allnames())
+        print("")
+    elif cmdg == "details":
+        print("")
+        print(output.itemattributes(part[1]))
+        print("")
+    elif cmdg == "add":
+        print("")
+        exp.add()
+        print("")
+        print("Added sucessfully")
+        print("")
     else:
-        for cmd in part:
-            cmdg = cmd.strip().lower()
-            if cmdg == "reset":
-                print("Reset file")
-                exp.createfile()
-            elif cmdg == "quit":
-                print("Quitting...")
-                break
-            elif cmdg == "read":
-                print(output.allnames())
-            elif cmdg == "details":
-                print(output.itemattributes(part[1]))
-            elif cmdg == "add":
-                exp.add()
+        print("")
+        print("Unknown command")

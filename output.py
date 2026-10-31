@@ -2,7 +2,7 @@ import exp
 
 #getting all data
 def getrows():
-    return exp.read
+    return exp.read()
 
 #getting all existing entry ids
 def allnames():
@@ -13,7 +13,7 @@ def allnames():
             names.append((row["id"]))
     else: 
         return("File empty")
-    return names
+    return "\n".join(names)
 
 #getting all attributes of a single searched id
 def itemattributes(wantedid):
