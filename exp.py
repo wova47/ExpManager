@@ -9,7 +9,7 @@ class expclass:
 
 #base functions
 def createfile():
-    with open("expenses.csv", "a", newline="", encoding="utf-8") as csvfile:
+    with open("expenses.csv", "w", newline="", encoding="utf-8") as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(["ID", "AMOUNT", "CATEGORY"])
 
