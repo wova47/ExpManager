@@ -1,4 +1,4 @@
-import outputting
+import output
 
-ans = outputting.itemattributes("car")
+ans = output.itemattributes("car")
 print(ans)
