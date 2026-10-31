@@ -21,7 +21,7 @@ def itemattributes(wantedid):
     allfound = []
     allrows = getrows()
     for item in allrows:
-        if item["id".strip().lower()] == wantedid.strip().lower():
+        if item["id"].strip().lower() == wantedid.strip().lower():
             allfound.append(f'{item["id"]}, {item["amount"]}, {item["category"]}')
     if not allfound:
         return("No matching entry")
